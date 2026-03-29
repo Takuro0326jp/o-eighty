@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90.913" height="91.078" viewBox="0 0 90.913 91.078">
+  <g id="グループ_3189" data-name="グループ 3189" transform="translate(-354.964 18.807)">
+    <g id="グループ_9" data-name="グループ 9" transform="translate(354.964 -18.807)">
+      <path id="パス_31" data-name="パス 31" d="M121.2,0" transform="translate(-76.754 45.621)" fill="none" stroke="#edeff2" stroke-width="1"/>
+      <g id="グループ_7" data-name="グループ 7" transform="translate(0 0)">
+        <g id="グループ_8" data-name="グループ 8" transform="translate(0 0)">
+          <path id="パス_33" data-name="パス 33" d="M45.457,0A45.457,45.457,0,1,1,13.314,77.6,45,45,0,0,1,0,45.457,45.457,45.457,0,0,1,45.457,0Z" transform="translate(90.913) rotate(90)" fill="#edeff2"/>
+        </g>
+      </g>
+      <g id="グループ_6" data-name="グループ 6" transform="translate(0 0.164)">
+        <rect id="長方形_28" data-name="長方形 28" width="45.032" height="45.032" transform="translate(90.913 45.882) rotate(90)" fill="#edeff2"/>
+        <rect id="長方形_29" data-name="長方形 29" width="45.032" height="45.032" transform="translate(45.032) rotate(90)" fill="#edeff2"/>
+        <ellipse id="楕円形_29" data-name="楕円形 29" cx="32.896" cy="32.896" rx="32.896" ry="32.896" transform="translate(78.778 11.831) rotate(90)" fill="#fff"/>
+        <ellipse id="楕円形_30" data-name="楕円形 30" cx="18.641" cy="18.641" rx="18.641" ry="18.641" transform="translate(63.673 26.087) rotate(90)" fill="#edeff2"/>
+        <path id="パス_32" data-name="パス 32" d="M8.772,0A8.772,8.772,0,1,1,0,8.772,8.772,8.772,0,0,1,8.772,0Z" transform="translate(42.338 22.516) rotate(90)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,253 @@
+:root {
+  --text-main: #0f172a;
+  --text-sub: #9aa3b2;
+  --accent: #e63e7b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.br-sp {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .br-sp {
+    display: inline;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+  color: var(--text-main);
+  background: #ffffff;
+}
+
+/* ===== Hero Layout ===== */
+
+.hero {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+
+  margin-left: calc(50% - 50vw);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-center {
+  width: 100%;
+  max-width: 640px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* ===== Typography ===== */
+
+.hero-title {
+  font-size: clamp(36px, 6vw, 96px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hero-sub {
+  margin-top: 8px;
+  font-size: clamp(32px, 5vw, 88px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.hero-impl {
+  margin-top: 14px;
+  font-size: clamp(24px, 4vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-sub);
+  letter-spacing: -0.01em;
+}
+
+.hero-description {
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 2;
+  color: #334155;
+}
+
+/* デフォルト（PC）：1行固定 */
+.hero-title {
+  white-space: nowrap;
+}
+
+/* スマホだけ：改行を許可 */
+@media (max-width: 600px) {
+  .hero-title {
+    white-space: normal;
+  }
+}
+
+/* ===== Animation Base ===== */
+
+.js-animate {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.9s ease;
+}
+
+.js-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-title .accent {
+  color: var(--accent);
+  display: inline-block;
+  transform: translateY(6px);
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s ease;
+}
+
+.hero-title.is-visible .accent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Scroll UI ===== */
+
+.mv-control {
+  position: absolute !important;
+  bottom: 32px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-down a {
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.12em;
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+.circle-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  opacity: 0;
+  animation: circleFlow 1.6s ease-in-out infinite;
+}
+
+.circle:nth-child(1) { animation-delay: 0s; }
+.circle:nth-child(2) { animation-delay: .2s; }
+.circle:nth-child(3) { animation-delay: .4s; }
+.circle:nth-child(4) { animation-delay: .6s; }
+
+/* ===== Hover ===== */
+
+.hero-title,
+.hero-sub,
+.hero-impl {
+  transition: color .4s ease, letter-spacing .4s ease;
+}
+
+.hero-title:hover { letter-spacing: -0.01em; }
+.hero-sub:hover { color: var(--accent); }
+.hero-impl:hover { color: var(--text-main); }
+
+/* ===== Keyframes ===== */
+
+@keyframes circleFlow {
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 1; }
+  60% { opacity: 1; transform: translateY(10px); }
+  100% { opacity: 0; transform: translateY(16px); }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: .6; text-shadow: 0 0 0 rgba(230,62,123,0); }
+  50% { opacity: 1; text-shadow: 0 0 18px rgba(230,62,123,.35); }
+  100% { opacity: .6; text-shadow: 0 0 0 rgba(230,62,123,0); }
+}
+
+/* ===== Responsive ===== */
+
+
+@media (max-width: 600px) {
+
+  /* 共通の縦リズム */
+  :root {
+    --hero-gap: 12px; /* ← ここを変えれば全部揃う */
+  }
+  
+    .hero {
+    min-height: 100svh; /* iOS対応 */
+    padding-top: 72px;
+  }
+
+  /* Beyond the */
+  .hero-title {
+    display: block;
+    white-space: normal;
+    font-size: clamp(56px, 14vw, 84px);
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  /* Blind Spot. */
+  .hero-title .accent {
+    display: block;
+    margin-top: var(--hero-gap);
+  }
+
+  /* One Eighty */
+  .hero-sub {
+    font-size: clamp(36px, 10vw, 60px);
+    font-weight: 600;
+    margin-top: var(--hero-gap);
+  }
+
+  /* Implementation. */
+  .hero-impl {
+    font-size: clamp(28px, 8vw, 48px);
+    margin-top: var(--hero-gap);
+  }
+
+  /* 表示後だけ薄く */
+  .hero-impl.js-animate.is-visible {
+    opacity: 0.85;
+  }
+
+　.hero-description {
+    font-size: clamp(16px, 4.5vw, 18px);
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+}
+
+.architecture-footer .btn-primary {
+  margin-bottom: 28px;
+}

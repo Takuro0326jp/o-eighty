@@ -1,0 +1,59 @@
+/* =====================================
+   Works Item (Common)
+===================================== */
+.works-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.works-link,
+.works-thumb {
+  display: block;
+}
+
+.works-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================================
+   Top Page : Works (Horizontal Scroll)
+===================================== */
+.home .works-list,
+.front-page .works-list {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+
+.home .works-item,
+.front-page .works-item {
+  min-width: 280px;
+  scroll-snap-align: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home .works-item:hover,
+.front-page .works-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* スクロールバー（任意） */
+.home .works-list::-webkit-scrollbar,
+.front-page .works-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* =====================================
+   Works More Button
+===================================== */
+.works-more-btn {
+  margin-top: 48px;
+  text-align: center;
+}

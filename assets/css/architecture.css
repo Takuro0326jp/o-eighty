@@ -1,0 +1,302 @@
+/* ===== Architecture Section ===== */
+
+.architecture {
+  padding: 160px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Top --- */
+
+.architecture-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.eyebrow {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: #3b82f6; /* ベース */
+}
+
+.concept h2 {
+  font-size: 36px;
+  line-height: 1.3;
+  margin: 16px 0;
+}
+
+.architecture-right {
+  margin-top: 96px;
+}
+
+.architecture-logo {
+  height: 28px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
+/* === Architecture Product Hover === */
+
+.architecture-product {
+  display: block;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+/* タイトル：通常状態を明示 */
+.architecture-product-title {
+  color: #94a3b8;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+
+/* ロゴ画像：通常状態を明示 */
+.architecture-product img {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* hover 時の変化 */
+.architecture-product:hover .architecture-product-title {
+  color: #4f7cff;
+  letter-spacing: 0.16em;
+}
+
+.architecture-product:hover img {
+  opacity: 0.9;
+}
+
+
+.lead {
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.desc {
+  line-height: 1.9;
+}
+
+.products .product + .product {
+  margin-top: 48px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.product-sub {
+  font-size: 13px;
+  color: #4f7cff;
+  margin-bottom: 8px;
+}
+
+/* --- Layers --- */
+
+.architecture-layers {
+  margin-top: 160px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+}
+
+/* --- Four Layers Head（Conceptと同格） --- */
+
+.layers-head h2 {
+  font-size: 36px;        /* concept h2 と同じ */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+
+.layers-head p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+
+.layers-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.layer {
+  padding: 32px 0;
+  border-bottom: 1px solid #e5e7eb;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    padding-left 0.25s ease,
+    border-left 0.25s ease;
+}
+
+.layer-no {
+  font-size: 12px;
+  color: #e63e7b;
+  letter-spacing: 0.1em;
+}
+
+/* 完成形（hover / active 共通） */
+.layer.is-active,
+.layer:hover {
+  background: #fff5f8;
+  border-left: 3px solid #e63e7b;
+  padding-left: 24px;
+  box-shadow: 0 8px 24px rgba(230,62,123,0.08);
+}
+
+.layer h3 {
+  transition: color 0.25s ease;
+}
+
+.layer:hover h3 {
+  color: #e63e7b;
+}
+
+@media (max-width: 768px) {
+
+  /* 全体レイアウト */
+  .architecture-layers {
+    margin-top: 96px;
+    display: block;       /* grid解除 */
+  }
+
+  /* 見出しブロック */
+  .layers-head {
+    margin-bottom: 32px;
+  }
+
+  .layers-head h2 {
+    font-size: 28px;      /* PC:36 → SP用 */
+    line-height: 1.35;
+  }
+
+  .layers-head p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* レイヤー一覧 */
+  .layers-list {
+    display: block;
+  }
+
+  .layer {
+    padding: 24px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    transition: none;    /* SPではhover前提を外す */
+  }
+
+  /* hoverは効かせない（タップ誤作動防止） */
+  .layer:hover {
+    background: none;
+    box-shadow: none;
+    border-left: none;
+    padding-left: 16px;
+  }
+
+  /* ナンバリング */
+  .layer-no {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  /* タイトル */
+  .layer h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  /* 説明文 */
+  .layer p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+}
+
+
+
+/* --- Footer --- */
+
+/* =====================================
+   Architecture Footer
+===================================== */
+.architecture-footer {
+  margin-top: 160px;
+  text-align: center;
+}
+
+/* =====================================
+   Architecture Quote（PC / SP 共通）
+===================================== */
+.architecture-footer .quote {
+  font-size: 32px;        /* ← 元の大きさ */
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;   /* ← 各行を1行に固定 */
+}
+
+/* 2行目もnowrapにするため */
+.architecture-footer .quote br.fixed-br {
+  display: block;
+}
+
+/* 強調ワード（ピンク） */
+.architecture-footer .quote span {
+  color: #e63e7b;        /* ← ピンク */
+}
+
+/* SP微調整（サイズだけ少し落とす） */
+@media (max-width: 767px) {
+  .architecture-footer .quote {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+
+.architecture .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: 360px; /* 好きな幅に */
+}
+
+.btn-primary {
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3b6cff; /* 少し濃く */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79,124,255,0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(79,124,255,0.25);
+}
+
+@media (max-width: 768px) {
+  .architecture-top {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-right {
+    margin-top: 0;
+  }
+}
+
