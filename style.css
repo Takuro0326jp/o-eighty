@@ -8793,4 +8793,60 @@ button {
   body {
     zoom: 75%;
   }
-} /*# sourceMappingURL=style.css.map */
+}
+
+/* AI Mode Badge */
+.ai-mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgb(196, 181, 253);
+  background: transparent;
+  margin-top: 6px;
+  width: fit-content;
+}
+
+.ai-mode-badge__icon {
+  font-size: 12px;
+  color: rgb(167, 139, 250);
+  line-height: 1;
+  display: inline-block;
+  transform-origin: center center;
+  animation: ai-mode-icon-rotate 6s ease-in-out infinite;
+}
+
+.ai-mode-badge__text {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  background: linear-gradient(
+    90deg,
+    rgb(167, 139, 250) 0%,
+    rgb(96, 165, 250)  40%,
+    rgb(167, 139, 250) 80%,
+    rgb(96, 165, 250)  100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: ai-mode-shimmer 5s linear infinite;
+}
+
+@keyframes ai-mode-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes ai-mode-icon-rotate {
+  0%   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+  25%  { transform: rotate(90deg)  scale(1.2); opacity: 0.8; }
+  50%  { transform: rotate(180deg) scale(1);   opacity: 1; }
+  75%  { transform: rotate(270deg) scale(1.2); opacity: 0.8; }
+  100% { transform: rotate(360deg) scale(1);   opacity: 1; }
+}
+/*# sourceMappingURL=style.css.map */
