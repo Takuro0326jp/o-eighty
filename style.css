@@ -8796,6 +8796,12 @@ button {
 }
 
 /* AI Mode Badge */
+.site-header .header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .ai-mode-badge {
   display: inline-flex;
   align-items: center;
@@ -8804,8 +8810,15 @@ button {
   border-radius: 999px;
   border: 1px solid rgb(196, 181, 253);
   background: transparent;
-  margin-top: 6px;
   width: fit-content;
+}
+
+@media (max-width: 767px) {
+  .site-header .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
 .ai-mode-badge__icon {
