@@ -117,15 +117,15 @@ document.head.appendChild(external_client_tracker_script);
             <path d="M196.58,148.973a1.911,1.911,0,0,0-1.626-.5c.006.016.011.031.016.048a5.93,5.93,0,0,1-.055,3.7,1.905,1.905,0,0,0,1.665-3.254Z" transform="translate(-177.171 -141.77)" fill="#fff"/>
           </svg>
         </a>
+        <div class="ai-mode-badge">
+          <span class="ai-mode-badge__icon">✦</span>
+          <span class="ai-mode-badge__text">＋AI mode</span>
+        </div>
       <?php if (is_front_page()): ?>
       </h1>
       <?php else: ?>
       </div>
       <?php endif; ?>
-      <div class="ai-mode-badge">
-        <span class="ai-mode-badge__icon">✦</span>
-        <span class="ai-mode-badge__text">＋AI mode</span>
-      </div>
       <nav class="site-navigation" id="site-navigation">
         <div class="site-navigation-inner">
           <ul class="site-navigation-list">
