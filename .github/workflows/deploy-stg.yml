@@ -1,0 +1,22 @@
+name: Deploy to STG
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to STG via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: www141.onamae.ne.jp
+          username: r0064976
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 8022
+          script: |
+            cd /home/r0064976/public_html/stg.o-eighty.jp/wp-content/themes/o-eighty_cms_v8
+            git pull origin staging
+            echo "STGデプロイ完了: $(date)"

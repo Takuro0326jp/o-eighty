@@ -1,0 +1,22 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: www141.onamae.ne.jp
+          username: r0064976
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 8022
+          script: |
+            cd /home/r0064976/public_html/o-eighty.jp/wp-content/themes/o-eighty_cms_v8
+            git pull origin main
+            echo "本番デプロイ完了: $(date)"

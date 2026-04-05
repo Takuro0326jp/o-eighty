@@ -122,6 +122,10 @@ document.head.appendChild(external_client_tracker_script);
       <?php else: ?>
       </div>
       <?php endif; ?>
+      <div class="ai-mode-badge">
+        <span class="ai-mode-badge__icon">✦</span>
+        <span class="ai-mode-badge__text">＋AI mode</span>
+      </div>
       <nav class="site-navigation" id="site-navigation">
         <div class="site-navigation-inner">
           <ul class="site-navigation-list">
