@@ -13,7 +13,7 @@ Template Name: トップページ専用テンプレート
           <span class="blur-reveal" style="animation-delay: 0.1s;">Beyond the</span>
           <span class="blur-reveal fc-pink" style="animation-delay: 0.3s;">Blind Spot.</span>
         </h1>
-        <div class="mv-copy">データが照らし出す、見えなかった突破口。</div>
+        <div class="mv-copy">見えない課題の、その先へ。</div>
         <div class="mv-copy-en"><span>Transform Blind Spots into Breakthrough Insights.</span></div>
         <p class="mv-txt">膨大なデータの向こうにある「真の課題」を発見し、<br>成果に直結する戦略へと昇華させる。<br>あなたのビジネスの死角を、競合優位に変える実装型パートナー。</p>
       </div>
